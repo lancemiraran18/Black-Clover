@@ -43,7 +43,7 @@ button{cursor:pointer}
 a{color:inherit;text-decoration:none}
 
 
-/* Full-screen cinema player */
+/* Google Drive native player */
 body.cinema-mode{overflow:hidden}
 body.cinema-mode .sidebar,
 body.cinema-mode .topbar,
@@ -54,16 +54,8 @@ body.cinema-mode .main{min-height:100vh}
 body.cinema-mode .content{padding:0;min-height:100vh}
 body.cinema-mode #playerSection{position:fixed;inset:0;z-index:9999;width:100vw;height:100vh;min-height:100vh;border:0;border-radius:0;box-shadow:none;background:#000;display:block}
 body.cinema-mode #playerSection::before{display:none}
-body.cinema-mode #mainVideo{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:1;background:#000}
-body.cinema-mode #driveFrame{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000}
-body.cinema-mode .video-fallback,
-body.cinema-mode .magic-aura,
-body.cinema-mode .hero-content,
-body.cinema-mode .video-controls-tip{display:none!important}
-body.cinema-mode #playerExit{display:flex}
-#playerExit{display:none;position:absolute;right:18px;top:18px;z-index:10002;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.62);color:#fff;align-items:center;justify-content:center;font-size:25px;backdrop-filter:blur(10px);box-shadow:0 8px 30px rgba(0,0,0,.35)}
-#playerExit:hover{border-color:rgba(231,189,115,.55);color:var(--gold-2);transform:scale(1.04)}
-@media(max-width:760px){#playerExit{right:12px;top:12px;width:42px;height:42px}}
+body.cinema-mode #driveFrame{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000;display:block}
+body.cinema-mode .hero-content{display:none!important}
 
 /* decorative parchment/stone edges inspired by the reference */
 body::after{content:"";position:fixed;z-index:-1;inset:0;background:
@@ -97,13 +89,10 @@ body::after{content:"";position:fixed;z-index:-1;inset:0;background:
 .content{padding:0 36px 70px}
 .featured{position:relative;min-height:505px;overflow:hidden;border-bottom-left-radius:22px;border-bottom-right-radius:22px;border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow);background:#050606}
 .featured::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 78% 44%, rgba(103,26,18,.42), transparent 26%),linear-gradient(90deg,rgba(6,7,7,.98) 0%,rgba(6,7,7,.92) 35%,rgba(6,7,7,.43) 64%,rgba(6,7,7,.05) 100%),linear-gradient(180deg,rgba(5,6,6,.05),rgba(5,6,6,.45));z-index:1}
-.magic-aura{position:absolute;inset:auto -5% -24% 40%;height:85%;filter:blur(2px);background:conic-gradient(from 90deg at 45% 50%,transparent,#7d2019 14%,transparent 28%,#2e5b39 40%,transparent 56%,#a14122 72%,transparent);opacity:.55}
-.featured video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.58;background:#030404}
-.video-fallback{position:absolute;inset:0;display:grid;place-items:center;z-index:0;color:#8b877f;font-size:14px;pointer-events:none}
+
 .hero-content{position:relative;z-index:2;min-height:505px;padding:74px 50px 42px;max-width:720px;display:flex;flex-direction:column;justify-content:flex-end}
 .eyebrow{color:var(--gold-2);font-size:14px;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px}.title{font:700 clamp(58px,7vw,88px)/.82 var(--font-title);letter-spacing:.5px;margin:0 0 24px;text-shadow:0 8px 30px #000}.desc{font-size:17px;line-height:1.55;color:#d2cdc5;max-width:560px;margin:0 0 20px}.meta{display:flex;gap:12px;flex-wrap:wrap;color:#c9c3ba;font-size:13px}.meta span{position:relative;padding-right:12px}.meta span:not(:last-child)::after{content:"";position:absolute;right:0;top:50%;transform:translateY(-50%);width:3px;height:3px;border-radius:50%;background:#7b766f}
 .cta-row{display:flex;gap:12px;margin:24px 0 18px;flex-wrap:wrap}.primary,.secondary{height:46px;padding:0 23px;border-radius:11px;border:1px solid transparent;display:inline-flex;align-items:center;gap:9px;font-weight:700;transition:.2s}.primary{background:linear-gradient(135deg,#fff9ec,#e6d5b8);color:#191512}.primary:hover{transform:translateY(-2px);box-shadow:0 14px 26px rgba(0,0,0,.25)}.secondary{background:rgba(5,6,6,.35);border-color:rgba(231,189,115,.55);color:#f0d9ad}.secondary:hover{background:rgba(231,189,115,.08)}
-.video-controls-tip{position:absolute;right:22px;bottom:18px;z-index:3;color:#c9c2b6;font-size:12px;display:flex;align-items:center;gap:7px;background:rgba(0,0,0,.4);padding:8px 11px;border-radius:10px;border:1px solid rgba(255,255,255,.08)}
 
 .section{padding-top:30px}.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}.section-title{font:600 22px Cinzel,serif;display:flex;align-items:center;gap:10px}.clover{color:var(--gold);font-size:22px}.see-all{font-size:12px;color:#a8a198}.see-all:hover{color:var(--gold-2)}
 .row{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(220px,1fr);gap:14px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}.row::-webkit-scrollbar{display:none}
@@ -132,7 +121,7 @@ body::after{content:"";position:fixed;z-index:-1;inset:0;background:
   .topbar{grid-template-columns:auto 1fr auto;padding:0 20px}.topnav{gap:18px}.search{width:190px}.content{padding:0 20px 80px}.poster-row,.library-grid{grid-template-columns:repeat(4,minmax(135px,1fr))}.title{font-size:64px}
 }
 @media (max-width:760px){
-  .app{display:block}.sidebar{display:none}.topbar{height:76px;display:grid;grid-template-columns:1fr auto;padding:0 16px}.topnav{display:none}.brand{font-size:25px}.top-actions{gap:7px}.search{display:none}.avatar{width:37px;height:37px}.icon-btn{width:38px;height:38px}.content{padding:0 12px 100px}.featured{min-height:570px;border-radius:0 0 18px 18px}.featured video{opacity:.48}.hero-content{min-height:570px;padding:25px 20px 30px;justify-content:flex-end;background:linear-gradient(180deg,transparent 25%,rgba(5,6,6,.8) 70%,#070909 100%)}.title{font-size:58px;margin-bottom:18px}.desc{font-size:15px}.video-controls-tip{right:12px;top:14px;bottom:auto}.section{padding-top:24px}.section-title{font-size:19px}.row{grid-auto-columns:78vw;gap:12px}.episode-card{height:156px}.poster-row{display:flex;overflow-x:auto;gap:12px}.poster{min-width:145px;min-height:235px}.poster-visual{min-height:235px}.library-grid{display:flex;overflow-x:auto}.library-item{min-width:180px}.mobile-bar{position:fixed;display:flex;bottom:0;left:0;right:0;height:70px;z-index:50;background:rgba(7,8,8,.94);border-top:1px solid rgba(255,255,255,.08);backdrop-filter:blur(18px);padding:7px 8px calc(7px + env(safe-area-inset-bottom));gap:5px}.mobile-bar .nav-btn{flex:1;min-height:50px}.mobile-bar .nav-btn span:last-child{font-size:10px}.modal{padding:24px}.modal .brand{font-size:34px}
+  .app{display:block}.sidebar{display:none}.topbar{height:76px;display:grid;grid-template-columns:1fr auto;padding:0 16px}.topnav{display:none}.brand{font-size:25px}.top-actions{gap:7px}.search{display:none}.avatar{width:37px;height:37px}.icon-btn{width:38px;height:38px}.content{padding:0 12px 100px}.featured{min-height:570px;border-radius:0 0 18px 18px}.hero-content{min-height:570px;padding:25px 20px 30px;justify-content:flex-end;background:linear-gradient(180deg,transparent 25%,rgba(5,6,6,.8) 70%,#070909 100%)}.title{font-size:58px;margin-bottom:18px}.desc{font-size:15px}.section{padding-top:24px}.section-title{font-size:19px}.row{grid-auto-columns:78vw;gap:12px}.episode-card{height:156px}.poster-row{display:flex;overflow-x:auto;gap:12px}.poster{min-width:145px;min-height:235px}.poster-visual{min-height:235px}.library-grid{display:flex;overflow-x:auto}.library-item{min-width:180px}.mobile-bar{position:fixed;display:flex;bottom:0;left:0;right:0;height:70px;z-index:50;background:rgba(7,8,8,.94);border-top:1px solid rgba(255,255,255,.08);backdrop-filter:blur(18px);padding:7px 8px calc(7px + env(safe-area-inset-bottom));gap:5px}.mobile-bar .nav-btn{flex:1;min-height:50px}.mobile-bar .nav-btn span:last-child{font-size:10px}.modal{padding:24px}.modal .brand{font-size:34px}
 }
 </style>
 </head>
@@ -168,14 +157,7 @@ body::after{content:"";position:fixed;z-index:-1;inset:0;background:
 
     <div class="content" id="home">
       <section class="featured" id="playerSection">
-        <button id="playerExit" aria-label="Exit full screen video">×</button>
-        <video id="mainVideo" controls playsinline preload="metadata" poster="">
-          <source id="videoSource" src="" type="video/mp4">
-          Your browser does not support HTML5 video.
-        </video>
         <iframe id="driveFrame" title="Black Clover episode player" allow="autoplay; fullscreen; encrypted-media" allowfullscreen referrerpolicy="no-referrer" style="display:none"></iframe>
-        <div class="video-fallback" id="videoFallback">Loading the Black Clover episode from Google Drive…</div>
-        <div class="magic-aura"></div>
         <div class="hero-content">
           <div class="eyebrow" id="welcomeEyebrow">Welcome back</div>
           <h1 class="title">Black ✤ Clover</h1>
@@ -183,7 +165,6 @@ body::after{content:"";position:fixed;z-index:-1;inset:0;background:
           <div class="cta-row"><button class="primary" id="watchBtn">▶ <span>Watch Now</span></button><button class="secondary" id="listBtn">＋ <span>My List</span></button></div>
           <div class="meta"><span>2026</span><span>Adventure</span><span>Action</span><span>Comedy</span><span>Fantasy</span></div>
         </div>
-        <div class="video-controls-tip">✤ Episode 1 · Season 2</div>
       </section>
 
       <section class="section" id="continue">
@@ -270,150 +251,236 @@ body::after{content:"";position:fixed;z-index:-1;inset:0;background:
 <script>
 (function(){
 'use strict';
-const video=document.getElementById('mainVideo');
-const videoSource=document.getElementById('videoSource');
-const bgm=document.getElementById('bgm');
 
-// Google Drive configuration. Use Google's embedded preview player as the primary
-// source because a Drive /uc download endpoint can return an HTML confirmation page
-// instead of playable MP4 bytes.
-const DRIVE_FILE_ID='1IM04xwb5AkCJuUH80vM_NeBRJmhH9tYF';
-const DRIVE_PREVIEW_URL='https://drive.google.com/file/d/'+DRIVE_FILE_ID+'/preview?autoplay=1';
-const DRIVE_DOWNLOAD_URL='https://drive.usercontent.google.com/download?id='+DRIVE_FILE_ID+'&export=download&confirm=t';
-const driveFrame=document.getElementById('driveFrame');
-videoSource.src=DRIVE_DOWNLOAD_URL;
-video.load();
+const bgm=document.getElementById('bgm');
 const modal=document.getElementById('nameModal');
 const nameInput=document.getElementById('nameInput');
 const enterBtn=document.getElementById('enterBtn');
 const welcome=document.getElementById('welcomeEyebrow');
 const toast=document.getElementById('toast');
-const fallback=document.getElementById('videoFallback');
-video.style.display='block';
 const drawer=document.getElementById('themeDrawer');
 const root=document.documentElement;
+const driveFrame=document.getElementById('driveFrame');
+const playerSection=document.getElementById('playerSection');
+
+// Google Drive's own embedded player.
+const DRIVE_FILE_ID='1IM04xwb5AkCJuUH80vM_NeBRJmhH9tYF';
+const DRIVE_PREVIEW_URL='https://drive.google.com/file/d/'+DRIVE_FILE_ID+'/preview?autoplay=1';
+
 let name=localStorage.getItem('cloverflixName')||'';
 let compact=false;
+
 const themes={
   black:{accent:'#e7bd73',soft:'rgba(231,189,115,.16)'},
   bulls:{accent:'#c7a064',soft:'rgba(199,160,100,.15)'},
   emerald:{accent:'#d8bc70',soft:'rgba(216,188,112,.14)'},
   moon:{accent:'#c4d7eb',soft:'rgba(196,215,235,.14)'}
 };
-function toastMsg(msg){toast.textContent=msg;toast.classList.add('show');clearTimeout(toastMsg.t);toastMsg.t=setTimeout(()=>toast.classList.remove('show'),1900)}
+
+function toastMsg(msg){
+  toast.textContent=msg;
+  toast.classList.add('show');
+  clearTimeout(toastMsg.t);
+  toastMsg.t=setTimeout(function(){toast.classList.remove('show');},1900);
+}
+
 function applyName(){
   name=name.trim()||'Clover Mage';
   localStorage.setItem('cloverflixName',name);
   welcome.textContent='Welcome back, '+name;
   document.getElementById('profileNameText').textContent=name;
   document.getElementById('profileAvatar').textContent=name.charAt(0).toUpperCase();
-  document.querySelector('.avatar').textContent=name.charAt(0).toUpperCase();
+  const avatar=document.querySelector('.avatar');
+  if(avatar) avatar.textContent=name.charAt(0).toUpperCase();
 }
+
 function tryBgm(){
-  if(video.paused){ bgm.volume=.23; bgm.play().catch(()=>{}); }
+  bgm.volume=0.23;
+  bgm.play().catch(function(){});
 }
-function stopBgm(){ bgm.pause(); }
+
+function stopBgm(){
+  bgm.pause();
+}
+
 function setTheme(key){
   const t=themes[key]||themes.black;
   root.style.setProperty('--accent',t.accent);
   root.style.setProperty('--accent-soft',t.soft);
-  if(key==='bulls'){root.style.setProperty('--red','#7a241b');root.style.setProperty('--green','#2b5539')}
-  if(key==='emerald'){root.style.setProperty('--red','#3b633e');root.style.setProperty('--green','#1f5b3d')}
-  if(key==='moon'){root.style.setProperty('--red','#344f72');root.style.setProperty('--green','#243c52')}
+  if(key==='bulls'){root.style.setProperty('--red','#7a241b');root.style.setProperty('--green','#2b5539');}
+  else if(key==='emerald'){root.style.setProperty('--red','#3b633e');root.style.setProperty('--green','#1f5b3d');}
+  else if(key==='moon'){root.style.setProperty('--red','#344f72');root.style.setProperty('--green','#243c52');}
+  else {root.style.setProperty('--red','#8e261d');root.style.setProperty('--green','#274c34');}
   localStorage.setItem('cloverflixTheme',key);
 }
+
 function syncNav(target){
-  document.querySelectorAll('[data-nav]').forEach(el=>el.classList.toggle('active',el.dataset.nav===target));
+  document.querySelectorAll('[data-nav]').forEach(function(el){
+    el.classList.toggle('active',el.dataset.nav===target);
+  });
 }
+
 function go(target){
   const map={home:'home',anime:'anime',movies:'movies',list:'my-list',profile:'profileSection'};
-  const id=map[target]||'home'; syncNav(target); document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'});
+  const id=map[target]||'home';
+  syncNav(target);
+  const el=document.getElementById(id);
+  if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
 }
+
 async function enterCinemaMode(){
   document.body.classList.add('cinema-mode');
-  const player=document.getElementById('playerSection');
-  player.scrollIntoView({behavior:'instant',block:'start'});
-  try {
-    if (!document.fullscreenElement && player.requestFullscreen) {
-      await player.requestFullscreen();
+  playerSection.scrollIntoView({behavior:'instant',block:'start'});
+  try{
+    if(!document.fullscreenElement && playerSection.requestFullscreen){
+      await playerSection.requestFullscreen();
     }
-  } catch (_) {}
+  }catch(e){}
 }
 
 function exitCinemaMode(){
-  if (document.fullscreenElement && document.exitFullscreen) {
-    document.exitFullscreen().catch(()=>{});
+  if(document.fullscreenElement && document.exitFullscreen){
+    document.exitFullscreen().catch(function(){});
   }
   document.body.classList.remove('cinema-mode');
-  document.getElementById('playerSection').scrollIntoView({behavior:'smooth',block:'start'});
+  driveFrame.src='about:blank';
+  driveFrame.style.display='none';
+  playerSection.scrollIntoView({behavior:'smooth',block:'start'});
+  tryBgm();
 }
 
 async function showVideo(){
-  // User click -> enter cinema/fullscreen first, then load Drive's embedded player.
-  // The click is a valid user gesture, so Drive gets the best chance to autoplay.
-  await enterCinemaMode();
-  fallback.style.display='none';
-  video.style.display='none';
-  driveFrame.style.display='block';
-  driveFrame.src='about:blank';
-  requestAnimationFrame(()=>{
-    driveFrame.src=DRIVE_PREVIEW_URL;
-  });
   stopBgm();
+  await enterCinemaMode();
+  driveFrame.style.display='block';
+  driveFrame.src=DRIVE_PREVIEW_URL;
 }
 
-document.querySelectorAll('[data-nav]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();go(el.dataset.nav)}));
+// Navigation
+document.querySelectorAll('[data-nav]').forEach(function(el){
+  el.addEventListener('click',function(e){
+    e.preventDefault();
+    go(el.dataset.nav);
+  });
+});
+
+// Video: Google Drive native controls only.
 document.getElementById('watchBtn').addEventListener('click',showVideo);
-document.getElementById('listBtn').addEventListener('click',()=>{localStorage.setItem('cloverflixSaved','true');toastMsg('Added Black Clover to My List ✤')});
-document.getElementById('themeBtn').addEventListener('click',()=>drawer.classList.add('open'));
-document.getElementById('closeTheme').addEventListener('click',()=>drawer.classList.remove('open'));
-document.getElementById('drawerScrim').addEventListener('click',()=>drawer.classList.remove('open'));
-document.querySelectorAll('.theme-option').forEach(b=>b.addEventListener('click',()=>{setTheme(b.dataset.theme);toastMsg('Theme changed ✦')}));
-document.getElementById('bellBtn').addEventListener('click',()=>toastMsg('No new Clover Kingdom notices.'));
-document.getElementById('profileBtn').addEventListener('click',()=>go('profile'));
-document.getElementById('renameBtn').addEventListener('click',()=>{nameInput.value=name;modal.classList.remove('hidden');setTimeout(()=>nameInput.focus(),50)});
-enterBtn.addEventListener('click',()=>{name=nameInput.value;applyName();modal.classList.add('hidden');tryBgm();toastMsg('Welcome, '+name+' ✤')});
-nameInput.addEventListener('keydown',e=>{if(e.key==='Enter')enterBtn.click()});
+document.querySelectorAll('.play-card').forEach(function(card){
+  card.addEventListener('click',showVideo);
+});
 
-// Keep the native video element available as a local-file fallback, but use Drive's
-// embedded player for the shared Google Drive episode.
-video.style.display='none';
-driveFrame.style.display='none';
-fallback.style.display='grid';
-fallback.textContent='Click Watch Now to play Black Clover.';
+// Library / theme / profile interactions.
+document.getElementById('listBtn').addEventListener('click',function(){
+  localStorage.setItem('cloverflixSaved','true');
+  toastMsg('Added Black Clover to My List ✤');
+});
 
-document.addEventListener('fullscreenchange',()=>{
-  if(document.fullscreenElement){
-    document.body.classList.add('cinema-mode');
-  }else if(document.body.classList.contains('cinema-mode')){
+document.getElementById('themeBtn').addEventListener('click',function(){drawer.classList.add('open');});
+document.getElementById('closeTheme').addEventListener('click',function(){drawer.classList.remove('open');});
+document.getElementById('drawerScrim').addEventListener('click',function(){drawer.classList.remove('open');});
+
+document.querySelectorAll('.theme-option').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    setTheme(btn.dataset.theme);
+    toastMsg('Theme changed ✦');
+  });
+});
+
+document.getElementById('bellBtn').addEventListener('click',function(){toastMsg('No new Clover Kingdom notices.');});
+document.getElementById('profileBtn').addEventListener('click',function(){go('profile');});
+
+document.getElementById('renameBtn').addEventListener('click',function(){
+  nameInput.value=name;
+  modal.classList.remove('hidden');
+  setTimeout(function(){nameInput.focus();},50);
+});
+
+enterBtn.addEventListener('click',function(){
+  name=nameInput.value;
+  applyName();
+  modal.classList.add('hidden');
+  tryBgm();
+  toastMsg('Welcome, '+name+' ✤');
+});
+
+nameInput.addEventListener('keydown',function(e){
+  if(e.key==='Enter') enterBtn.click();
+});
+
+// Return to the normal page if the browser fullscreen button / Escape is used.
+document.addEventListener('fullscreenchange',function(){
+  if(!document.fullscreenElement && document.body.classList.contains('cinema-mode')){
     document.body.classList.remove('cinema-mode');
-    driveFrame.style.display='none';
     driveFrame.src='about:blank';
-    fallback.style.display='grid';
-    fallback.textContent='Click Watch Now to play Black Clover.';
+    driveFrame.style.display='none';
+    tryBgm();
   }
 });
 
-document.getElementById('playerExit').addEventListener('click',exitCinemaMode);
+// Search
+const searchInput=document.getElementById('searchInput');
+if(searchInput){
+  searchInput.addEventListener('input',function(e){filterCards(e.target.value);});
+}
 
-document.querySelectorAll('.play-card').forEach(card=>card.addEventListener('click',showVideo));
-document.querySelectorAll('.poster').forEach(card=>card.addEventListener('click',()=>{const q=card.querySelector('.poster-name').textContent;document.getElementById('searchInput').value=q;filterCards(q)}));
-
-document.getElementById('searchInput').addEventListener('input',e=>filterCards(e.target.value));
 function filterCards(term){
-  const q=term.toLowerCase().trim();
-  document.querySelectorAll('[data-search]').forEach(card=>card.style.display=!q||card.dataset.search.includes(q)?'':'none');
+  const q=String(term||'').toLowerCase().trim();
+  document.querySelectorAll('[data-search]').forEach(function(card){
+    card.style.display=(!q||card.dataset.search.toLowerCase().includes(q))?'':'none';
+  });
   if(q) toastMsg('Searching the Clover library…');
 }
 
-document.querySelectorAll('[data-action]').forEach(el=>el.addEventListener('click',()=>{const a=el.dataset.action;if(a==='scroll-continue')document.getElementById('continue').scrollIntoView({behavior:'smooth'});if(a==='trending')go('anime');if(a==='list')go('list')}));
+document.querySelectorAll('.poster').forEach(function(card){
+  card.addEventListener('click',function(){
+    const title=card.querySelector('.poster-name');
+    if(searchInput && title){
+      searchInput.value=title.textContent;
+      filterCards(title.textContent);
+    }
+  });
+});
 
-document.getElementById('accentRange').addEventListener('input',e=>{const n=Number(e.target.value)/100;const c=Math.round(231*n+24);const g=Math.round(189*n+42);const b=Math.round(115*n+36);root.style.setProperty('--accent',`rgb(${c},${g},${b})`)});
-document.getElementById('compactToggle').addEventListener('change',e=>{compact=e.target.checked;document.querySelectorAll('.poster').forEach(el=>el.style.minHeight=compact?'210px':'250px');document.querySelectorAll('.poster-visual').forEach(el=>el.style.minHeight=compact?'210px':'250px')});
-document.getElementById('autoplayToggle').addEventListener('change',e=>{localStorage.setItem('cloverflixAutoplay',e.target.checked?'1':'0')});
+document.querySelectorAll('[data-action]').forEach(function(el){
+  el.addEventListener('click',function(){
+    const a=el.dataset.action;
+    if(a==='scroll-continue') document.getElementById('continue').scrollIntoView({behavior:'smooth'});
+    if(a==='trending') go('anime');
+    if(a==='list') go('list');
+  });
+});
 
-const savedTheme=localStorage.getItem('cloverflixTheme')||'black';setTheme(savedTheme);
-if(name){applyName();modal.classList.add('hidden')}else{setTimeout(()=>nameInput.focus(),300)}
+document.getElementById('accentRange').addEventListener('input',function(e){
+  const n=Number(e.target.value)/100;
+  const c=Math.round(231*n+24);
+  const g=Math.round(189*n+42);
+  const b=Math.round(115*n+36);
+  root.style.setProperty('--accent','rgb('+c+','+g+','+b+')');
+});
+
+document.getElementById('compactToggle').addEventListener('change',function(e){
+  compact=e.target.checked;
+  document.querySelectorAll('.poster').forEach(function(el){el.style.minHeight=compact?'210px':'250px';});
+  document.querySelectorAll('.poster-visual').forEach(function(el){el.style.minHeight=compact?'210px':'250px';});
+});
+
+document.getElementById('autoplayToggle').addEventListener('change',function(e){
+  localStorage.setItem('cloverflixAutoplay',e.target.checked?'1':'0');
+});
+
+const savedTheme=localStorage.getItem('cloverflixTheme')||'black';
+setTheme(savedTheme);
+
+if(name){
+  applyName();
+  modal.classList.add('hidden');
+}else{
+  setTimeout(function(){nameInput.focus();},300);
+}
+
+// Start the requested background music after the user enters the site.
+// Browser autoplay restrictions may require the first click in some browsers.
 tryBgm();
 })();
 </script>
