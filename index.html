@@ -328,17 +328,37 @@ function go(target){
   if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
 }
 
+async function lockLandscape(){
+  try{
+    if(window.screen && screen.orientation && screen.orientation.lock){
+      await screen.orientation.lock('landscape');
+    }
+  }catch(e){}
+}
+
+function unlockOrientation(){
+  try{
+    if(window.screen && screen.orientation && screen.orientation.unlock){
+      screen.orientation.unlock();
+    }
+  }catch(e){}
+}
+
 async function enterCinemaMode(){
   document.body.classList.add('cinema-mode');
   playerSection.scrollIntoView({behavior:'instant',block:'start'});
   try{
     if(!document.fullscreenElement && playerSection.requestFullscreen){
-      await playerSection.requestFullscreen();
+      await playerSection.requestFullscreen({navigationUI:'hide'});
     }
   }catch(e){}
+  if(window.matchMedia && window.matchMedia('(max-width: 900px)').matches){
+    await lockLandscape();
+  }
 }
 
 function exitCinemaMode(){
+  unlockOrientation();
   if(document.fullscreenElement && document.exitFullscreen){
     document.exitFullscreen().catch(function(){});
   }
@@ -411,6 +431,7 @@ nameInput.addEventListener('keydown',function(e){
 // Return to the normal page if the browser fullscreen button / Escape is used.
 document.addEventListener('fullscreenchange',function(){
   if(!document.fullscreenElement && document.body.classList.contains('cinema-mode')){
+    unlockOrientation();
     document.body.classList.remove('cinema-mode');
     driveFrame.src='about:blank';
     driveFrame.style.display='none';
